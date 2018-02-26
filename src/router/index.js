@@ -1,8 +1,9 @@
 import Vue from 'vue'
 import Router from 'vue-router'
 import HelloWorld from '@/components/HelloWorld'
+import Home from '@/components/Home/Home'
 import Info from '@/components/Info'
-import menu from '@/components/menu'
+import Menu from '@/components/Menu'
 
 Vue.use(Router)
 
@@ -11,15 +12,19 @@ export default new Router({
     {
       path: '/',
       name: 'index',
-      component: menu,
+      component: Menu,
       children: [
         {
           path: 'info',
           component: Info
         },
         {
+          path: '',
+          component: Home
+        },
+        {
           path: 'home',
-          component: Info
+          component: Home
         },
         {
           path: '/infos',
