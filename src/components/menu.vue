@@ -3,28 +3,33 @@
     <el-aside width="auto">
       <img class="user-face"  :class="[isCollapse ? 'close' : '']" src="../assets/face.jpg" />
       <el-button class="zoom" :class="[isCollapse ? 'close' : '']" type="primary" plain icon="el-icon-back" @click="menusStatus"></el-button>
-      <el-menu default-active="home" class="el-menu-vertical-demo" @open="handleOpen" @close="handleClose" :collapse="isCollapse" :router=true>
-        <el-submenu index="1">
+      <el-menu
+        class="el-menu-vertical-demo"
+        @open="handleOpen"
+        @close="handleClose"
+        :default-active="$router.path"
+        :collapse="isCollapse"
+        :router=true>
+        <el-menu-item index="/home">
+          <i class="el-icon-menu"></i>
+          <span slot="title">首页</span>
+        </el-menu-item>
+        <el-menu-item index="/info">
+          <i class="el-icon-menu"></i>
+          <span slot="title">信息</span>
+        </el-menu-item>
+        <!-- <el-submenu index=''>
           <template slot="title">
             <i class="el-icon-location"></i>
             <span slot="title">导航一</span>
           </template>
           <el-menu-item-group>
-            <el-menu-item index="/home">默认页</el-menu-item>
-            <el-menu-item index="/info">信息</el-menu-item>
+            <el-menu-item index="/">根</el-menu-item>
           </el-menu-item-group>
-        </el-submenu>
+        </el-submenu> -->
         <el-menu-item index="/infos">
           <i class="el-icon-menu"></i>
           <span slot="title">infos</span>
-        </el-menu-item>
-        <el-menu-item index="/" disabled>
-          <i class="el-icon-document"></i>
-          <span slot="title">导航三</span>
-        </el-menu-item>
-        <el-menu-item index="/" disabled>
-          <i class="el-icon-setting"></i>
-          <span slot="title">个人设置</span>
         </el-menu-item>
       </el-menu>
     </el-aside>
@@ -75,7 +80,7 @@
 export default {
   data () {
     return {
-      isCollapse: true
+      isCollapse: false
     }
   },
   methods: {

@@ -15,15 +15,15 @@ export default new Router({
       component: Menu,
       children: [
         {
-          path: 'info',
+          path: '/info',
           component: Info
         },
         {
-          path: '',
+          path: '/',
           component: Home
         },
         {
-          path: 'home',
+          path: '/home',
           component: Home
         },
         {
