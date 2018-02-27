@@ -72,26 +72,26 @@
 </style>
 
 <script>
-  export default {
-    data() {
-      return {
-        isCollapse: true
-      };
+export default {
+  data() {
+    return {
+      isCollapse: true
+    };
+  },
+  methods: {
+    handleOpen(key, keyPath) {
+      console.log(key, keyPath);
     },
-    methods: {
-      handleOpen(key, keyPath) {
-        console.log(key, keyPath);
-      },
-      handleClose(key, keyPath) {
-        console.log(key, keyPath);
-      },
-      menusStatus(event){
-        if(this.isCollapse){
-          this.isCollapse=false
-        }else{
-          this.isCollapse=true
-        }
+    handleClose(key, keyPath) {
+      console.log(key, keyPath);
+    },
+    menusStatus(event){
+      if(this.isCollapse){
+        this.isCollapse=false
+      }else{
+        this.isCollapse=true
       }
     }
-  };
+  }
+}
 </script>
