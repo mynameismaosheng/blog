@@ -51,8 +51,8 @@
     width: 180px;
     margin: 0 auto;
     transition: width 0.6s;
-    -moz-transition: width 0.6s;	/* Firefox 4 */
-    -webkit-transition: width 0.6s;	/* Safari 和 Chrome */
+    -moz-transition: width 0.6s;
+    -webkit-transition: width 0.6s;
     -o-transition: width 0.6s;
   }
   .user-face.close{
@@ -63,33 +63,33 @@
     display: block;
   }
   .zoom.close{
-      transform:rotate(180deg);
-      -ms-transform:rotate(180deg); 	/* IE 9 */
-      -moz-transform:rotate(180deg); 	/* Firefox */
-      -webkit-transform:rotate(180deg); /* Safari 和 Chrome */
-      -o-transform:rotate(180deg); 	/* Opera */
-    }
+    transform:rotate(180deg);
+    -ms-transform:rotate(180deg);
+    -moz-transform:rotate(180deg);
+    -webkit-transform:rotate(180deg);
+    -o-transform:rotate(180deg);
+  }
 </style>
 
 <script>
 export default {
-  data() {
+  data () {
     return {
       isCollapse: true
-    };
+    }
   },
   methods: {
-    handleOpen(key, keyPath) {
-      console.log(key, keyPath);
+    handleOpen (key, keyPath) {
+      console.log(key, keyPath)
     },
-    handleClose(key, keyPath) {
-      console.log(key, keyPath);
+    handleClose (key, keyPath) {
+      console.log(key, keyPath)
     },
-    menusStatus(event){
-      if(this.isCollapse){
-        this.isCollapse=false
-      }else{
-        this.isCollapse=true
+    menusStatus (event) {
+      if (this.isCollapse) {
+        this.isCollapse = false
+      } else {
+        this.isCollapse = true
       }
     }
   }
