@@ -52,6 +52,7 @@
       </el-collapse>
     </el-tab-pane>
     <el-tab-pane label="与我相关" name="fourth">与我相关</el-tab-pane>
+    <el-tab-pane label="写文章" name="newWork">文章</el-tab-pane>
   </el-tabs>
 </template>
 <script>
