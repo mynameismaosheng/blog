@@ -7,7 +7,7 @@
         class="el-menu-vertical-demo"
         @open="handleOpen"
         @close="handleClose"
-        :default-active="$router.path"
+        :default-active="$route.path"
         :collapse="isCollapse"
         :router=true>
         <el-menu-item index="/home">
