@@ -3,7 +3,7 @@ import Router from 'vue-router'
 import HelloWorld from '@/components/HelloWorld'
 import Home from '@/components/Home/Home'
 import Info from '@/components/Info'
-import Menu from '@/components/Menu'
+// import Menu from '@/components/Menu'
 
 Vue.use(Router)
 
@@ -12,7 +12,7 @@ export default new Router({
     {
       path: '/',
       name: 'index',
-      component: Menu,
+      component: resolve => require(['@/components/Menu', '@/components/Home/Home'], resolve),
       children: [
         {
           path: '/info',

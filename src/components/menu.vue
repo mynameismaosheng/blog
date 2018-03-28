@@ -32,6 +32,7 @@
           <span slot="title">infos</span>
         </el-menu-item>
       </el-menu>
+      <el-button id="signout" :class="[isCollapse ? 'close' : '']">退出</el-button>
     </el-aside>
     <el-main>
       <router-view></router-view>
@@ -44,7 +45,13 @@
     height: 100%;
   }
   .el-aside{
+    position: relative;
     background-color: #fff;
+    border-right: 1px solid #e6e6e6;
+    padding: 0 4px;
+  }
+  .el-menu{
+    border: 0;
   }
   .el-menu-vertical-demo:not(.el-menu--collapse) {
     width: 200px;
@@ -53,8 +60,9 @@
   .user-face{
     display: block;
     border-radius: 25%;
-    width: 180px;
-    margin: 0 auto;
+    width: 100px;
+    height: 100px;
+    margin: 20px auto;
     transition: width 0.6s;
     -moz-transition: width 0.6s;
     -webkit-transition: width 0.6s;
@@ -62,6 +70,15 @@
   }
   .user-face.close{
     width: 65px;
+    height: 65px;
+  }
+  #signout{
+    position: absolute;
+    bottom: 0px;
+    width: 200px;
+  }
+  .close#signout{
+    width: 66px;
   }
   .zoom{
     width: 100%;
