@@ -4,7 +4,7 @@ import HelloWorld from '@/components/HelloWorld'
 import Home from '@/components/Home/Home'
 import Info from '@/components/Info'
 // import Menu from '@/components/Menu'
-
+import Layout from '@/view/layout/layout'
 Vue.use(Router)
 
 export default new Router({
@@ -12,7 +12,7 @@ export default new Router({
     {
       path: '/',
       name: 'index',
-      component: resolve => require(['@/components/Menu', '@/components/Home/Home'], resolve),
+      component: Layout,
       children: [
         {
           path: '/info',
@@ -30,6 +30,21 @@ export default new Router({
           path: '/infos',
           name: 'Infos',
           component: HelloWorld
+        }
+      ]
+    },
+    {
+      path: '/article',
+      name: 'article',
+      component: Layout,
+      children: [
+        {
+          path: 'hot',
+          component: Info
+        },
+        {
+          path: 'new',
+          component: Home
         }
       ]
     }
