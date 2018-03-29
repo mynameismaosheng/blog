@@ -1,15 +1,20 @@
 <template>
     <el-aside width="auto">
-      <img class="user-face" :class="[isCollapse ? 'close' : '']" src="@/assets/face.jpg" />
-      <el-button class="zoom" :class="[isCollapse ? 'close' : '']" type="primary" plain icon="el-icon-back" @click="menusStatus"></el-button>
-      <el-button id="signout" :class="[isCollapse ? 'close' : '']" >退出</el-button>
+      <router-link to="/user">
+        <img class="user-face" :class="[isCollapse ? 'close' : '']" src="@/assets/face.jpg" />
+      </router-link>
+      <el-button class="zoom" :class="[isCollapse ? 'close' : '']" type="info" icon="el-icon-back" @click="menusStatus"></el-button>
+      <el-button id="signout" @click="signout" :class="[isCollapse ? 'close' : '']" type="info" ><i class="el-icon-caret-left"></i>退出</el-button>
       <el-menu
+        background-color="#545c64"
+        text-color="#fff"
+        active-text-color="#ffd04b"
         class="el-menu-vertical-demo"
         @open="handleOpen"
         @close="handleClose"
         :default-active="$route.path"
         :collapse="isCollapse"
-        :router=true>
+        :router="true">
         <el-menu-item index="/home">
           <i class="el-icon-menu"></i>
           <span slot="title">首页</span>
@@ -21,6 +26,10 @@
         <el-menu-item index="/infos">
           <i class="el-icon-menu"></i>
           <span slot="title">infos</span>
+        </el-menu-item>
+        <el-menu-item index="/article/write">
+          <i class="el-icon-edit-outline"></i>
+          <span slot="title">文章</span>
         </el-menu-item>
       </el-menu>
     </el-aside>
@@ -46,6 +55,9 @@ export default {
       } else {
         this.isCollapse = true
       }
+    },
+    signout () {
+      this.$message('您点击了退出')
     }
   }
 }
@@ -54,7 +66,7 @@ export default {
 <style>
 .el-aside {
   position: relative;
-  background-color: #fff;
+  background-color: #545c64;
   border-right: 1px solid #e6e6e6;
   padding: 0 5px;
 }
@@ -88,6 +100,7 @@ export default {
 }
 .close#signout {
   width: 66px;
+  padding: 10px 0;
 }
 .zoom {
   width: 100%;

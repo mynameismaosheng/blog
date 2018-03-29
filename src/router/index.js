@@ -13,14 +13,11 @@ export default new Router({
       path: '/',
       name: 'index',
       component: Layout,
+      redirect: '/home',
       children: [
         {
           path: '/info',
           component: Info
-        },
-        {
-          path: '/',
-          component: Home
         },
         {
           path: '/home',
@@ -34,13 +31,29 @@ export default new Router({
       ]
     },
     {
-      path: '/article',
-      name: 'article',
+      path: '/user',
+      name: 'user',
       component: Layout,
       children: [
         {
-          path: 'hot',
-          component: Info
+          path: '/',
+          component: resolve => require(['@/view/userinfo/userinfo.vue'], resolve)
+        }
+      ]
+    },
+    {
+      path: '/article',
+      name: 'article',
+      component: Layout,
+      redirect: '/article/write',
+      children: [
+        {
+          path: 'write',
+          component: resolve => require(['@/view/article/write.vue'], resolve)
+        },
+        {
+          path: 'myopus',
+          component: resolve => require(['@/view/article/myopus.vue'], resolve)
         },
         {
           path: 'new',
