@@ -28,27 +28,27 @@
 
 <script>
 export default {
-  data() {
+  data () {
     return {
       isCollapse: false
-    };
+    }
   },
   methods: {
-    handleOpen(key, keyPath) {
-      console.log(key, keyPath);
+    handleOpen (key, keyPath) {
+      console.log(key, keyPath)
     },
-    handleClose(key, keyPath) {
-      console.log(key, keyPath);
+    handleClose (key, keyPath) {
+      console.log(key, keyPath)
     },
-    menusStatus(event) {
+    menusStatus (event) {
       if (this.isCollapse) {
-        this.isCollapse = false;
+        this.isCollapse = false
       } else {
-        this.isCollapse = true;
+        this.isCollapse = true
       }
     }
   }
-};
+}
 </script>
 
 <style>

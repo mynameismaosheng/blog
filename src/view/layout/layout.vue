@@ -12,10 +12,10 @@
 </style>
 
 <script>
-import { Menu, appMain } from "./component"
+import { Menu, appMain } from './component'
 
 export default {
-  name: "layout",
+  name: 'layout',
   components: {
     Menu,
     appMain
