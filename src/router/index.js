@@ -42,8 +42,7 @@ export default new Router({
       ]
     },
     {
-      path: '/article',
-      name: 'article',
+      path: '/Article',
       component: Layout,
       redirect: '/article/write',
       children: [
