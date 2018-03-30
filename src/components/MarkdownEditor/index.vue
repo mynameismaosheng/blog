@@ -37,19 +37,19 @@ export default {
       type: Array
     }
   },
-  data() {
+  data () {
     return {
       simplemde: null,
       hasChange: false
     }
   },
   watch: {
-    value(val) {
+    value (val) {
       if (val === this.simplemde.value() && !this.hasChange) return
       this.simplemde.value(val)
     }
   },
-  mounted() {
+  mounted () {
     this.simplemde = new SimpleMDE({
       element: document.getElementById(this.id || 'markdown-editor-' + +new Date()),
       autoDownloadFontAwesome: false,
@@ -72,7 +72,7 @@ export default {
       this.$emit('input', this.simplemde.value())
     })
   },
-  destroyed() {
+  destroyed () {
     this.simplemde.toTextArea()
     this.simplemde = null
   }
