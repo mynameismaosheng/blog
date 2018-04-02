@@ -19,14 +19,6 @@
           <i class="el-icon-menu"></i>
           <span slot="title">首页</span>
         </el-menu-item>
-        <el-menu-item index="/info">
-          <i class="el-icon-menu"></i>
-          <span slot="title">信息</span>
-        </el-menu-item>
-        <el-menu-item index="/infos">
-          <i class="el-icon-menu"></i>
-          <span slot="title">infos</span>
-        </el-menu-item>
         <el-menu-item index="/article/write">
           <i class="el-icon-edit-outline"></i>
           <span slot="title">文章</span>
