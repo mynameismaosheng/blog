@@ -1,7 +1,9 @@
 <template>
   <el-tabs v-model="activeName" @tab-click="handleClick">
     <el-tab-pane label="blog统计" name="first">
-      blog统计 图表
+      <div class="bar-charts">
+        <barCharts height='100%' width='100%'></barCharts>
+      </div>
     </el-tab-pane>
     <el-tab-pane label="最新" name="second">
       <el-collapse accordion>
@@ -56,8 +58,11 @@
   </el-tabs>
 </template>
 <script>
+import barCharts from '@/components/Charts/Bar'
+import { debounce } from '@/utils'
 export default {
   name: 'Home',
+  components: { barCharts },
   data () {
     return {
       activeName: 'second'
@@ -65,8 +70,15 @@ export default {
   },
   methods: {
     handleClick (tab, event) {
-      console.log(tab, event)
+      if(tab.name == "first"){
+        this.chart ? this.chart.resize() : ''
+      }
     }
   }
 }
 </script>
+<style>
+.bar-charts{
+  height: 85vh;
+}
+</style>
