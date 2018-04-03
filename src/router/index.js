@@ -46,6 +46,17 @@ export default new Router({
           component: resolve => require(['@/view/Home/Home.vue'], resolve)
         }
       ]
-    }
+    },
+    {
+      path: '/static',
+      name: 'static',
+      component: Layout,
+      children: [
+        {
+          path: '/',
+          component: resolve => require(['@/view/statics/static.vue'], resolve)
+        }
+      ]
+    },
   ]
 })

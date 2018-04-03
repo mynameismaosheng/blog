@@ -23,6 +23,10 @@
           <i class="el-icon-edit-outline"></i>
           <span slot="title">文章</span>
         </el-menu-item>
+        <el-menu-item index="/static">
+          <i class="el-icon-menu"></i>
+          <span slot="title">统计</span>
+        </el-menu-item>
       </el-menu>
     </el-aside>
 </template>
