@@ -12,7 +12,7 @@
 <script>
 // import Tinymce from '@/components/Tinymce'
 import MarkdownEditor from "@/components/MarkdownEditor";
-
+import { createArticle } from "@/api/artice";
 const txt = `
 **this is test markdown**
 * vue
@@ -40,6 +40,9 @@ export default {
     publish() {
       import("showdown").then(showdown => {
         const converter = new showdown.Converter();
+        createArticle(converter.makeHtml(this.MarkdownText)).then(response => {
+          console.log(this);
+        });
         this.$alert(converter.makeHtml(this.MarkdownText), "目前不支持发布~~", {
           confirmButtonText: "确定",
           dangerouslyUseHTMLString: true,
@@ -56,9 +59,4 @@ export default {
 };
 </script>
 
-<style scoped>
-/* .simplemde-container{
-  height: auto;
-  min-height: 200px;
-} */
-</style>
+<style scoped></style>
