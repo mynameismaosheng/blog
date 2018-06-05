@@ -26,8 +26,8 @@ export default {
       default: ''
     },
     height: {
-      type: Number,
-      default: 150
+      type: String,
+      default: 200
     },
     zIndex: {
       type: Number,
@@ -83,6 +83,7 @@ export default {
 .simplemde-container>>>.CodeMirror {
   min-height: 150px;
   line-height: 20px;
+  box-sizing: border-box;
 }
 
 .simplemde-container>>>.CodeMirror-scroll {
