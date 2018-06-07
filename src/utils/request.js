@@ -7,16 +7,16 @@ const service = axios.create({
   timeout: 5000
 })
 
-service.interceptors.request.use(config => {
-  // Do something before request is sent
-  // console.log(config);
-  // axios.defaults.baseURL = 'http://47.94.230.236:6892/api/';
-  return config
-}, error => {
-  // Do something with request error
-  console.log(error) // for debug
-  Promise.reject(error)
-})
+// service.interceptors.request.use(config => {
+//   // Do something before request is sent
+//   // console.log(config);
+//   // axios.defaults.baseURL = 'http://47.94.230.236:6892/api/';
+//   return config
+// }, error => {
+//   // Do something with request error
+//   console.log(error) // for debug
+//   Promise.reject(error)
+// })
 
 service.interceptors.response.use(
   response => response,
