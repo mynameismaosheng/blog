@@ -26,65 +26,75 @@
   </div>
 </template>
 <script>
-  export default {
-    name: "Home",
-    data() {
-      return {
-        lists: [{
+import { fetchArticle } from "@/api/artice";
+export default {
+  name: "Home",
+  data() {
+    return {
+      lists: [],
+      activeName: "bestNew",
+      bestNew: ["1"],
+      bestHot: ["6"],
+      none: ""
+    };
+  },
+  mounted() {
+    this.init();
+  },
+  methods: {
+    init() {
+      var self = this;
+      fetchArticle().then(response => {
+        console.log(response);
+        self.lists = [
+          {
             title: "一致性1",
             id: 1,
             content: `
-          <p>与现实生活一致：与现实生活的流程、逻辑保持一致，遵循用户习惯的语言和概念；</p>
-          <strong>加粗字体</strong>
-          <p>在界面中一致：所有的元素和结构需保持一致，比如：设计样式、图标和文本、元素的位置等。</p>`
+            <p>与现实生活一致：与现实生活的流程、逻辑保持一致，遵循用户习惯的语言和概念；</p>
+            <strong>加粗字体</strong>
+            <p>在界面中一致：所有的元素和结构需保持一致，比如：设计样式、图标和文本、元素的位置等。</p>`
           },
           {
             title: "一致性2",
             id: 2,
             content: `
-          <p>与现实生活一致：与现实生活的流程、逻辑保持一致，遵循用户习惯的语言和概念；</p>
-          <strong>加粗字体</strong>
-          <p>在界面中一致：所有的元素和结构需保持一致，比如：设计样式、图标和文本、元素的位置等。</p>`
+            <p>与现实生活一致：与现实生活的流程、逻辑保持一致，遵循用户习惯的语言和概念；</p>
+            <strong>加粗字体</strong>
+            <p>在界面中一致：所有的元素和结构需保持一致，比如：设计样式、图标和文本、元素的位置等。</p>`
           }
-        ],
-        activeName: "bestNew",
-        bestNew: ["1"],
-        bestHot: ["6"],
-        none: ""
-      };
+        ];
+      });
     },
-    methods: {
-      handleClick(tab, event) {
-        this.none = this[tab.name].length ? "" : "none";
-      },
-      handleChange(val) {
-        this.none = val.length ? "" : "none";
-      },
-      changCollapse() {
-        this[this.activeName] = [];
-        this.none = "none";
-      }
+    handleClick(tab, event) {
+      this.none = this[tab.name].length ? "" : "none";
+    },
+    handleChange(val) {
+      this.none = val.length ? "" : "none";
+    },
+    changCollapse() {
+      this[this.activeName] = [];
+      this.none = "none";
     }
-  };
-
+  }
+};
 </script>
 <style>
-  .tabicon {
-    color: #e8ea78;
-  }
+.tabicon {
+  color: #e8ea78;
+}
 
-  .is-active .tabicon {
-    color: #409eff;
-  }
+.is-active .tabicon {
+  color: #409eff;
+}
 
-  .allStop {
-    position: fixed;
-    right: 25px;
-    bottom: 20px;
-  }
+.allStop {
+  position: fixed;
+  right: 25px;
+  bottom: 20px;
+}
 
-  .none {
-    display: none;
-  }
-
+.none {
+  display: none;
+}
 </style>
