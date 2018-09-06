@@ -81,14 +81,12 @@ export default {
 
 <style scoped>
 .simplemde-container>>>.CodeMirror {
-  min-height: 150px;
   line-height: 20px;
   box-sizing: border-box;
   height: 420px;
 }
 
 .simplemde-container>>>.CodeMirror-scroll {
-  min-height: 150px;
   height: 410px;
 }
 

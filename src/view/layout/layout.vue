@@ -4,7 +4,6 @@
     <appMain></appMain>
   </el-container>
 </template>
-
 <script>
 import { Menu, appMain } from './component'
 
@@ -15,11 +14,12 @@ export default {
     appMain
   }
 }
-</script>
 
+</script>
 <style>
-    #app > .el-container {
-        margin-bottom: 0;
-        height: 100%;
-    }
+#app>.el-container {
+  margin-bottom: 0;
+  height: 100%;
+}
+
 </style>
